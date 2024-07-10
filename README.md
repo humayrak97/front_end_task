@@ -1,26 +1,59 @@
 
 # Optimizely Take-Home Assignment
-Dear candidate, congratulations on reaching this stage in your recruitment journey with Optimizely!
 
-In this repository, you will find the "backend" code for two AI-powered assistants (chatbots): Grumpy and Poet. 
-To begin, try to launch them and have a quick chat to understand what they do. You will also be provided with a dedicated API key to access the OpenAI API.
 
-## Your tasks will be the following:
-1. Run the assistants, examine the provided code, and understand what they do.
-2. Pick one assistant and generate a REST API that will allow the front end to communicate with it.
-3. Prepare a suitable UI for this assistant (something like the ChatGPT interface) and connect it to your API.
-4. Make it easily shareable and demonstrable with the team (e.g., create a Dockerfile with instructions so that we can run it inside a container, deploy it to some free hosting, or make a standalone app).
+## Instructions:
+This is a Flask-based chatbot application that uses OpenAI's GPT-3.5-turbo model to generate responses in rhyme to solve the tasks given by Optimizely.
 
-## Extra Tasks:
-1. Try to do the same with the other assistant.
-2. Create a UI where you can switch between the two assistants (again, similar to the ChatGPT interface).
-3. Feel free to go creative and introduce some extra features that you think might make sense (e.g., "login page," feedback, file upload).
+## Prerequisites
 
-## Other Comments:
-1. You don't have any time restrictions, but please keep track of how much time you've spent on the task to share with us. We will schedule a call with you about a week after this task was shared.
-2. Don't stress about any part of the task—if something doesn't work as you intended, just leave it as is :)
-3. You will need to present your results to the team. Make it in a way that's comfortable for you: either a live walkthrough or a PowerPoint presentation.
-4. But, share the results with us beforehand, so we can try it out before the call.
-5. You can fork from this repo or work in a branch, whatever you prefere.
+- [Docker](https://www.docker.com/get-started) installed on your machine.
+- [Python 3.9](https://www.python.org/downloads/release/python-390/) installed on your machine (for local testing).
 
-## Good luck!
+## Getting Started
+
+Follow these instructions to build and run the application inside a Docker container.
+
+### 1. Clone the Repository
+
+Clone this repository to your local machine using the following command:
+
+_git clone https://github.com/your-username/front_end_task.git_
+
+_cd front_end_task_
+
+### 2. Set Up Environment Variables
+Create a .env file in the root directory of the project and add your OpenAI API key:
+
+_OPENAI_API_KEY=your_openai_api_key_here_
+
+
+### 3. Build the Docker Image
+Build the Docker image using the provided Dockerfile:
+
+_docker build -t optibot ._
+
+
+### 4. Run the Docker Container
+Run the Docker container using the following command:
+
+_docker run -p 5001:5001 optibot_
+
+This command maps port 5001 of your local machine to port 5001 inside the Docker container.
+
+### 5. Access the Application
+Open a web browser and go to:
+
+http://localhost:5001
+
+You should see the chatbot application interface. You can now interact with the chatbot by entering prompts and receiving responses in rhyme.
+
+### Note: 
+
+_Dependencies: The required dependencies are listed in the requirements.txt file. These are automatically installed when building the Docker image._
+
+_Testing Locally: You can run the flask appliction by the following command:_
+
+_python app.py_
+
+_Python Script: The AI powered assistant Poet main\_poet.py is used for this application. The updated python script is app.py._
