@@ -31,7 +31,7 @@ if env_file:
 #%% General setting
 #client = openai()
 
-openai.api_key = "sk-proj-ARlVHCJ0Cy4DOFU0OmadT3BlbkFJ74Mc5j29AWXWWpIMjq9B"
+openai.api_key = "your_api_key"
 
 role = "You are an assistant that always answers with rhyme."
 
